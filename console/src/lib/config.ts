@@ -73,7 +73,7 @@ export const POLLS: Poll[] = [
         blurb: 'Pick a procedure, get a plain-language handout at a chosen reading level.',
         spec:
           'A single-page patient discharge explainer. Dropdown of procedures (TAVR, PCI, LAAO, MitraClip/TEER, radial cath). ' +
-          'Reading level toggle (simple / standard). Renders a printable plain-language handout from static text in src/handouts.ts: ' +
+          'Reading level toggle (simple / standard). Renders a printable plain-language handout from static text: ' +
           'what was done, what to expect in the first week, when to call, activity and wound care. Print button. No AI calls, no network. ' +
           'Use the pre-vetted handouts in src/clinical/handouts.ts (getHandout, handoutText, already tested, English and Spanish); do not write new handout text.',
         ideas: [

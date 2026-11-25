@@ -46,3 +46,8 @@ silently. When you report done, list each feature with one line on how you built
 - Big tap targets (min 44px), high contrast, one column on phones.
 - Scores update instantly as toggles change; no submit button.
 - Plain-English result line under each score, e.g. "≈ 3.2% annual stroke risk".
+- Paint the theme background on the page `body` as well (a class in `index.html` or a rule in `src/index.css`),
+  not only on the app container, so no white shows when a phone over-scrolls.
+- Keep each score and its result line in view while the inputs scroll: a compact sticky bar at the top
+  that never covers the inputs.
+- Nothing is cut off at 390 px wide. Long labels wrap, or use a shorter label that still names the item.
