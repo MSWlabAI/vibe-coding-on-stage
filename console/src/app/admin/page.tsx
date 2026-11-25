@@ -47,7 +47,7 @@ export default function Admin() {
       {!state.redis && <p className="mb-4 rounded-lg border border-amber-500/50 bg-amber-500/10 p-3 text-sm text-amber-200">In-memory storage: fine for local testing, <b>not</b> for the stage. Add Upstash Redis env vars on Vercel.</p>}
       {msg && <p className="mb-4 rounded-lg border border-red-500/50 bg-red-500/10 p-3 text-sm text-red-200">{msg}</p>}
 
-      <div className="sticky top-0 z-20 -mx-4 mb-6 border-b border-slate-800 bg-slate-950/95 px-4 py-3">
+      <div className="sticky top-0 z-20 -mx-4 mb-6 border-b border-slate-800 bg-slate-950 px-4 py-3">
         <div className="flex items-center gap-3">
           <button type="button" onClick={() => admin({ action: 'slide', to: Math.max(0, slide - 1) })} disabled={slide <= 0}
             className="min-h-14 rounded-xl border border-slate-700 px-4 text-lg font-bold disabled:opacity-40">◀ Back</button>
@@ -139,10 +139,10 @@ export default function Admin() {
 
       <Section title="Overrides & demo URL">
         {POLLS.map((p) => (
-          <div key={p.id} className="mb-2 flex items-center gap-2">
+          <div key={p.id} className="mb-2 flex flex-wrap items-center gap-2">
             <span className="w-40 text-sm text-slate-400">{p.question}</span>
             <select value={state.settings.overrides[p.id] ?? ''} onChange={(e) => admin({ action: 'settings', overrides: { [p.id]: e.target.value } })}
-              className="min-h-11 rounded-lg border border-slate-700 bg-slate-900 px-3">
+              className="min-h-11 min-w-0 max-w-full rounded-lg border border-slate-700 bg-slate-900 px-3">
               <option value="">Audience winner</option>
               {p.options.map((o) => <option key={o.id} value={o.id}>{o.label} (override)</option>)}
             </select>
